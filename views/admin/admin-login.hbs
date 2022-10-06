@@ -1,0 +1,51 @@
+
+    <header>
+        <div class="row mt-5">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 m-auto border">
+                <div class="container mt-5 pl-5">
+                    <h1 class="text-center">Admin Login Page</h1>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                            aria-labelledby="tab-login">
+                            <form action="/admin/admin-login" method="post">
+                            {{#if loginErr}}
+                                 <p class="error text-danger">{{loginErr}}</p>
+                            {{/if}}
+                                
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="loginName">Email</label>
+                                    <input type="email" id="loginName" class="form-control" name="email"
+                                        placeholder="Enter your mail" />
+
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="loginPassword">Password</label>
+                                    <input type="password" id="loginPassword" class="form-control" name="password"
+                                        placeholder="Enter your password" />
+
+                                </div>
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                                <!-- Register buttons -->
+                                <div class="text-center">
+                                    {{!-- <p>Not a member? <a href="/admin/admin-signup">Register</a></p> --}}
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </header>
+    

@@ -1,0 +1,37 @@
+<section>
+    <div class="container">
+        <div class="row mt-3">
+            <a href="/admin/admin-signup" style="width:130px;margin-left:62rem" class="btn btn-info mb-3">Add Admin</a>
+            <a href="/admin/add-users" style="width:130px;margin-left:62rem;" class="btn btn-success mb-3">Add Users</a>
+        </div>
+        <table class="table mt-5" id="productsTable">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Customer Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Edit User</th>
+      <th scope="col">Delete User</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each response}}
+    <tr>
+      <th scope="row">*</th>
+      <td>{{this._id}}</td>
+      <td>{{this.first_name}} {{this.last_name}}</td>
+      <td>{{this.email}}</td>
+      <td><a href="/admin/edit-user/{{this.email}}" style="width:110px;" class="btn btn-primary">Edit User</a></td>
+      <td><a href="/admin/delete-user/{{this.email}}" onclick="return confirm('Are you sure want to delete {{this.first_name}} {{this.last_name}}')" style="width:110px;" class="btn btn-danger">Delete User</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+    </div>
+</section>
+<script>
+  $ (document).ready(function () {
+    $('#productsTable').DataTable();
+});
+</script>
